@@ -10,7 +10,7 @@ Projects often develop their own agent instructions, documentation habits, testi
 
 The intended workflow has two layers of agents:
 
-1. **Developer agents** work inside a project repository. They use that project’s local documentation and standards contract, along with the selected profiles from this repository.
+1. **Developer agents** work inside a project repository. They use that project's local documentation and standards contract, along with the selected profiles from this repository.
 2. **Tech-lead agents** periodically audit a project against its selected standards and profiles. They produce evidence-based findings and should normally propose changes through a pull request.
 
 Projects should pin a standards version and select only the profiles that apply to them. They should reference this repository rather than copying its entire contents.
@@ -23,14 +23,14 @@ An individual project remains the source of truth for its current architecture, 
 
 ## Repository map
 
-- [`AGENTS.md`](AGENTS.md) — agent entry point; redirects to the canonical instructions.
-- [`CLAUDE.md`](CLAUDE.md) — Claude agent entry point; redirects to the canonical instructions.
-- [`docs/README.md`](docs/README.md) — documentation index.
-- [`docs/principles/`](docs/principles/README.md) — broad engineering principles.
-- [`docs/standards/`](docs/standards/README.md) — cross-project standards.
-- [`docs/profiles/`](docs/profiles/README.md) — technology and architecture profiles.
-- [`docs/adr/`](docs/adr/README.md) — policy for architecture decision records.
-- [`docs/templates/`](docs/templates/adr.md) — reusable ADR and project contract templates.
+- [`AGENTS.md`](AGENTS.md) - agent entry point; redirects to the canonical instructions.
+- [`CLAUDE.md`](CLAUDE.md) - Claude agent entry point; redirects to the canonical instructions.
+- [`docs/README.md`](docs/README.md) - documentation index.
+- [`docs/principles/`](docs/principles/README.md) - broad engineering principles.
+- [`docs/standards/`](docs/standards/README.md) - cross-project standards.
+- [`docs/profiles/`](docs/profiles/README.md) - technology and architecture profiles.
+- [`docs/adr/`](docs/adr/README.md) - policy for architecture decision records.
+- [`docs/templates/`](docs/templates/README.md) - reusable ADR and project contract templates.
 
 ## Documentation lifecycle
 

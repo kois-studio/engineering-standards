@@ -4,10 +4,10 @@ This directory contains the shared engineering system. Start with the section th
 
 ## Contents
 
-- [Principles](principles/README.md) — broad values that shape the standards.
-- [Standards](standards/README.md) — cross-project rules for documentation, testing, TypeScript, and styling.
-- [Technology profiles](profiles/README.md) — guidance for Astro, Angular, NestJS, and Go projects.
-- [ADR policy](adr/README.md) — when and how to record durable decisions.
-- [Templates](templates/adr.md) — reusable ADR and project standards contract templates.
+- [Principles](principles/README.md) - broad values that shape the standards.
+- [Standards](standards/README.md) - cross-project rules for documentation, testing, TypeScript, and styling.
+- [Technology profiles](profiles/README.md) - guidance for Astro, Angular, NestJS, and Go projects.
+- [ADR policy](adr/README.md) - when and how to record durable decisions.
+- [Templates](templates/README.md) - reusable ADR and project standards contract templates.
 
-The root [`README.md`](../README.md) explains the repository’s purpose, two-layer agent model, and maturity. The root [`AGENTS.md`](../AGENTS.md) and [`CLAUDE.md`](../CLAUDE.md) are agent entry points; this directory’s [`AGENTS.md`](AGENTS.md) contains the canonical maintenance instructions.
+The root [`README.md`](../README.md) explains the repository's purpose, two-layer agent model, and maturity. The root [`AGENTS.md`](../AGENTS.md) and [`CLAUDE.md`](../CLAUDE.md) are agent entry points; this directory's [`AGENTS.md`](AGENTS.md) contains the canonical maintenance instructions.
