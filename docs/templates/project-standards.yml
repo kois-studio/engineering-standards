@@ -1,0 +1,6 @@
+standards_version: 0.1.0
+
+profiles:
+  - astro-website
+
+exceptions: []
