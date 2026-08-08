@@ -1,6 +1,6 @@
 # Templates
 
-Reusable templates for documenting durable decisions and project standards selections.
+Reusable templates for documenting durable decisions, project standards selections, and future project handoffs.
 
 - [ADR template](adr.md)
 - [Project standards contract](project-standards.yml)

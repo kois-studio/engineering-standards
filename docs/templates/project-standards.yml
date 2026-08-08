@@ -1,6 +1,17 @@
+contract_version: 0.1.0
 standards_version: 0.1.0
+
+project:
+  name: replace-with-project-name
+  lifecycle: existing # existing or greenfield
+
+standards:
+  - documentation
+  - testing
 
 profiles:
   - astro-website
 
 exceptions: []
+
+deferred_work: []

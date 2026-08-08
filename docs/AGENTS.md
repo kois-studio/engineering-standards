@@ -2,6 +2,26 @@
 
 This repository is a source of shared standards, not a warehouse for every project’s documentation. Keep each document useful after the current task is complete.
 
+## Choose the session mode first
+
+Every session working from this repository MUST identify one operating mode before inspecting or changing files. See [`agent-modes.md`](agent-modes.md) for the complete routing contract.
+
+Supported modes are:
+
+- `project-bootstrap` — analyze and prepare an existing project for AI development.
+- `project-design` — define and document a not-yet-started or early-stage project.
+- `standards-maintenance` — improve this engineering standards repository itself.
+
+The user may declare a mode with either a structured block or an explicit line such as `MODE: EXISTING PROJECT TECH LEAD`. If the mode or target project is ambiguous, ask before making changes. Do not infer that every session in this repository is a standards-maintenance session.
+
+Mode-specific workflows:
+
+- [`workflows/project-bootstrap.md`](workflows/project-bootstrap.md)
+- [`workflows/project-design.md`](workflows/project-design.md)
+- [`workflows/standards-maintenance.md`](workflows/standards-maintenance.md)
+
+The project workflows produce documentation that belongs in the target project. They do not copy this repository wholesale into that project.
+
 ## Classify information before writing
 
 Use this decision guide:
