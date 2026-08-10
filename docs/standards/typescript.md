@@ -17,10 +17,10 @@
 ### TS-002 — Avoid unsafe `any`
 
 - **Applicability:** TypeScript source code.
-- **Strength:** Recommended.
-- **Rule:** Developers SHOULD avoid `any`. Untyped boundaries SHOULD use `unknown` followed by validation or narrowing.
-- **Evidence:** Explicit `any` usages and boundary types.
-- **Verification:** Run lint or type tooling where available and review remaining `any` uses for narrow scope and rationale.
+- **Strength:** Required for new code; Recommended for existing code until adopted through tracked remediation work.
+- **Rule:** New code MUST NOT introduce undocumented `any` usage. Narrow interoperability cases MAY use `any` when the reason and scope are documented. Untyped boundaries SHOULD use `unknown` followed by validation or narrowing.
+- **Evidence:** Explicit `any` usages, suppression comments, boundary types, and remediation records.
+- **Verification:** Run lint or type tooling where available, review new or changed `any` uses for narrow scope and rationale, and confirm legacy usages are tracked when they remain.
 
 ### TS-003 — Explicit public contracts
 
