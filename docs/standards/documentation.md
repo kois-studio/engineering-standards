@@ -16,11 +16,11 @@
 
 ### DOC-002 — Documentation index
 
-- **Applicability:** Projects with maintained project documentation.
-- **Strength:** Recommended.
-- **Rule:** Projects SHOULD provide `/docs/README.md` as a navigable index for current documentation.
+- **Applicability:** Projects with maintained project documentation; especially projects prepared for AI agents.
+- **Strength:** Required for AI-ready projects; Recommended otherwise.
+- **Rule:** AI-ready projects MUST provide `/docs/README.md` as a navigable index for current documentation. Other projects SHOULD provide it when they maintain more than a small amount of documentation.
 - **Evidence:** A `docs/README.md` file linking to maintained project documents.
-- **Verification:** Follow the index links and confirm important maintained documents are reachable.
+- **Verification:** Follow the index links and confirm important maintained documents are reachable. For AI-ready projects, absence of the index is a compliance gap.
 
 ### DOC-003 — Single source of truth
 
@@ -69,6 +69,22 @@
 - **Rule:** Exceptions to an adopted standard MUST be visible in the project’s standards contract or project documentation.
 - **Evidence:** A linked exception with rationale and affected rule IDs.
 - **Verification:** For each non-compliant Required or Recommended rule, check for either remediation work or a documented exception.
+
+### DOC-009 — Repository README
+
+- **Applicability:** Every project repository.
+- **Strength:** Required.
+- **Rule:** Every project repository MUST provide a root `README.md` that gives a quick guide to the project’s purpose, setup, primary commands, repository structure, and detailed documentation.
+- **Evidence:** The root `README.md` and its setup or onboarding instructions.
+- **Verification:** A new contributor should be able to understand what the project is, how to start it, and where to find deeper guidance without reading the source code first.
+
+### DOC-010 — Documentation audience boundaries
+
+- **Applicability:** Projects using AI agents and projects with detailed developer documentation.
+- **Strength:** Required for AI-ready projects; Recommended otherwise.
+- **Rule:** The root `README.md` MUST remain a concise human-facing onboarding guide. Detailed developer and agent guidance MUST live under `/docs/`, with `/docs/AGENTS.md` as the canonical agent entry point and other documents linked from `/docs/README.md` where applicable.
+- **Evidence:** Root README, `docs/AGENTS.md`, `docs/README.md`, and links between them.
+- **Verification:** Confirm the root README is useful without becoming the complete architecture manual, while agent instructions and detailed project facts are discoverable under `docs/`.
 
 ## Review questions
 

@@ -24,6 +24,8 @@ Each rule should state:
 - **Evidence** — what an auditor should inspect; and
 - **Verification** — how the expectation can be checked through documents, configuration, commands, tests, or review.
 
+When strength depends on project lifecycle or applicability, the condition MUST be stated explicitly, such as “Required for AI-ready projects; Recommended otherwise.”
+
 The project’s compliance status is recorded separately using the states defined in [`../agent-modes.md`](../agent-modes.md). An audit MUST cite the rule ID and evidence rather than reporting only a general impression.
 
 Standards should be enforceable where practical through repository configuration, CI, tests, or lightweight future validation tooling.
