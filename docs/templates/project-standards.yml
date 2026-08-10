@@ -1,16 +1,27 @@
 contract_version: 0.1.0
 standards_version: 0.1.0
 
+standards_source:
+  repository: replace-with-engineering-standards-reference
+  revision: replace-with-tag-or-commit
+
 project:
   name: replace-with-project-name
   lifecycle: existing # existing or greenfield
+  maturity: replace-with-maturity
 
 standards:
   - documentation
   - testing
+  - security
+  - dependencies
+  - ci-cd
 
 profiles:
   - astro-website
+
+compliance:
+  rules: []
 
 exceptions: []
 

@@ -11,5 +11,6 @@ This directory contains the shared engineering system. Start with the section th
 - [Templates](templates/README.md) - reusable ADR and project standards contract templates.
 - [Agent modes](agent-modes.md) - session routing and shared compliance states.
 - [Agent workflows](workflows/README.md) - bootstrap, design, and standards-maintenance procedures.
+- [Examples](examples/project-archetypes.md) - illustrative profile selections for target project shapes.
 
 The root [`README.md`](../README.md) explains the repository's purpose, two-layer agent model, and maturity. The root [`AGENTS.md`](../AGENTS.md) and [`CLAUDE.md`](../CLAUDE.md) are agent entry points; this directory's [`AGENTS.md`](AGENTS.md) contains the canonical maintenance instructions.

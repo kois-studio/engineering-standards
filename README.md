@@ -104,6 +104,7 @@ An individual project remains the source of truth for its current architecture, 
 - [`docs/adr/`](docs/adr/README.md) - policy for architecture decision records.
 - [`docs/templates/`](docs/templates/README.md) - reusable ADR and project contract templates.
 - [`docs/workflows/`](docs/workflows/README.md) - mode-specific Tech Lead and maintenance workflows.
+- [`scripts/validate-standards.rb`](scripts/validate-standards.rb) - lightweight standards metadata, link, and template validator.
 
 ## Documentation lifecycle
 
