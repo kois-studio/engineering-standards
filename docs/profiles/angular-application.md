@@ -94,12 +94,46 @@
 - **Evidence:** Journey definitions and end-to-end tests.
 - **Verification:** Run the tests in a controlled environment and confirm they cover the user-visible contract.
 
+### ANGULAR-012 — Angular compiler strictness
+
+- **Applicability:** Angular applications.
+- **Strength:** Required for new applications; Recommended for existing applications until adopted through tracked remediation work.
+- **Rule:** New Angular applications MUST enable strict template and dependency-injection checks, including `strictTemplates`, `strictInjectionParameters`, and `strictInputAccessModifiers`. Existing applications SHOULD enable them and MUST record deferred migration work when they cannot do so immediately.
+- **Evidence:** Angular compiler configuration, `tsconfig` files, compiler output, and remediation records.
+- **Verification:** Run the Angular build or type-check command and confirm the effective configuration enforces the selected strictness options.
+
+### ANGULAR-013 — UI authorization is not security enforcement
+
+- **Applicability:** Angular applications with authenticated users or protected capabilities.
+- **Strength:** Required when applicable.
+- **Rule:** Route guards, hidden controls, and client-side state MUST NOT be treated as the sole authorization boundary. Protected operations MUST be enforced by the backend or authoritative service according to the shared security and API standards.
+- **Evidence:** Route guards, API authorization, backend contracts, denied-access tests, and security documentation.
+- **Verification:** Attempt protected operations through direct requests or alternate client paths and confirm authorization remains enforced outside the UI.
+
+### ANGULAR-014 — Explicit asynchronous UI states
+
+- **Applicability:** Angular views and workflows that load, mutate, or synchronize external data.
+- **Strength:** Required when applicable.
+- **Rule:** User-visible asynchronous interactions MUST model loading, empty, success, failure, cancellation, and retry states as applicable to the workflow.
+- **Evidence:** State models, templates, components, error handling, and workflow tests.
+- **Verification:** Exercise slow, empty, successful, failed, cancelled, and retried operations and inspect the resulting user-visible states.
+
+### ANGULAR-015 — Scoped client state
+
+- **Applicability:** Angular applications with shared, cached, or persisted client state.
+- **Strength:** Recommended.
+- **Rule:** Client state SHOULD have an explicit scope, ownership, persistence policy, reset behavior, and synchronization strategy. Projects SHOULD avoid making global state the default for feature-local concerns.
+- **Evidence:** State stores, services, providers, persistence adapters, and feature documentation.
+- **Verification:** Trace state creation, sharing, refresh, logout, navigation, and invalidation behavior for representative features.
+
 ## Review questions
 
 - Are features and state boundaries understandable?
 - Can business rules be tested without rendering a component?
 - Are loading, empty, success, and failure states explicit?
 - Are authorization boundaries enforced in both the UI and backend contract?
+- Are Angular compiler strictness checks enabled or tracked for migration?
+- Can state be reset safely during logout, navigation, and failed synchronization?
 
 ## Boundaries and exceptions
 
