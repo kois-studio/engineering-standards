@@ -17,10 +17,10 @@
 ### TEST-002 — Regression coverage
 
 - **Applicability:** Projects fixing a reproducible defect.
-- **Strength:** Recommended.
-- **Rule:** Bug fixes SHOULD include a regression test where practical.
+- **Strength:** Required for security, data-integrity, public-interface, and critical-journey defects; Recommended otherwise.
+- **Rule:** Bug fixes in security-sensitive behavior, data integrity, public interfaces, or critical user journeys MUST include a regression test when the defect is reproducible. Other bug fixes SHOULD include a regression test where practical.
 - **Evidence:** The bug-fix change and a test reproducing the prior failure.
-- **Verification:** Confirm the regression test fails against the old behavior or directly exercises the affected contract.
+- **Verification:** Confirm the regression test fails against the old behavior or directly exercises the affected contract. For an omitted test, verify that the change is outside the Required risk categories and that the reason is recorded when the omission is meaningful.
 
 ### TEST-003 — Deterministic isolated tests
 
