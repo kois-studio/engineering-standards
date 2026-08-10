@@ -2,7 +2,7 @@
 
 Engineering Standards is a versioned, shared reference and bootstrap system for engineering practices, documentation, technology profiles, architecture decisions, and AI-agent workflows. Its primary purpose is to help a Tech Lead agent prepare a project so that future developer agents can work from the project’s own documentation without repeatedly rediscovering its architecture or consulting this repository.
 
-This repository is currently a **v0.1 foundation**. The structure and initial standards are useful starting points, but they may be refined as they are applied to real projects.
+This repository is currently a **v0.2 working baseline**. It has an auditable rule catalog, Tech Lead workflows, project handoff templates, and cross-project standards, but it should continue to be validated against real projects.
 
 ## Why this exists
 
@@ -105,6 +105,7 @@ An individual project remains the source of truth for its current architecture, 
 - [`docs/templates/`](docs/templates/README.md) - reusable ADR and project contract templates.
 - [`docs/workflows/`](docs/workflows/README.md) - mode-specific Tech Lead and maintenance workflows.
 - [`scripts/validate-standards.rb`](scripts/validate-standards.rb) - lightweight standards metadata, link, and template validator.
+- [`docs/versioning.md`](docs/versioning.md) - standards versioning and consumer migration policy.
 
 ## Documentation lifecycle
 

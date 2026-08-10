@@ -1,5 +1,5 @@
-contract_version: 0.1.0
-standards_version: 0.1.0
+contract_version: 0.2.0
+standards_version: 0.2.0
 
 standards_source:
   repository: replace-with-engineering-standards-reference
@@ -22,6 +22,12 @@ profiles:
 
 compliance:
   rules: []
+  # Example item:
+  # - id: DOC-001
+  #   status: unknown
+  #   evidence: replace-with-paths-or-commands
+  #   priority: high
+  #   next_action: replace-with-next-action
 
 exceptions: []
 
