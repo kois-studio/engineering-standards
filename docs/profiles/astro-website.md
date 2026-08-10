@@ -49,8 +49,8 @@
 ### ASTRO-006 — Accessible content presentation
 
 - **Applicability:** Public Astro websites.
-- **Strength:** Recommended.
-- **Rule:** Pages SHOULD use semantic HTML, accessible navigation, meaningful document metadata, and optimized images.
+- **Strength:** Required when applicable.
+- **Rule:** Pages MUST use semantic HTML and accessible navigation. They SHOULD provide meaningful document metadata and optimized images.
 - **Evidence:** Page templates, metadata components, navigation, image configuration, and accessibility tests.
 - **Verification:** Review representative pages and run available accessibility and image/performance checks.
 
@@ -86,12 +86,46 @@
 - **Evidence:** End-to-end tests and critical journey documentation.
 - **Verification:** Run the focused tests in a controlled browser environment and confirm they cover the important interaction contract.
 
+### ASTRO-011 — Content and asset integrity
+
+- **Applicability:** Astro websites with structured content, generated routes, or managed assets.
+- **Strength:** Required when applicable.
+- **Rule:** Builds MUST validate required content fields, internal links, route slugs, asset references, and other inputs that could produce broken or incomplete pages.
+- **Evidence:** Content schemas, link checks, route validation, asset checks, and build output.
+- **Verification:** Run the project’s build and validation commands with representative invalid content and confirm failures are visible before deployment.
+
+### ASTRO-012 — Static deployment correctness
+
+- **Applicability:** Astro websites deployed as static output.
+- **Strength:** Required when applicable.
+- **Rule:** Static deployments MUST have deterministic output, documented redirects and headers, a deliberate 404 behavior, and no undeclared runtime dependency on server state.
+- **Evidence:** Astro output mode, adapter/hosting configuration, redirects, headers, 404 page, and deployment workflow.
+- **Verification:** Build from a clean environment and inspect the deployed site for route, asset, header, redirect, and error-page behavior.
+
+### ASTRO-013 — Metadata and discoverability
+
+- **Applicability:** Public Astro websites intended to be discoverable or shared.
+- **Strength:** Recommended.
+- **Rule:** Pages SHOULD provide intentional titles, descriptions, canonical URLs, social-sharing metadata, and sitemap or robots behavior appropriate to the site.
+- **Evidence:** Metadata components, generated HTML, sitemap, robots configuration, and route strategy.
+- **Verification:** Inspect representative rendered pages and confirm metadata reflects the page content and indexing intent.
+
+### ASTRO-014 — Safe island data boundaries
+
+- **Applicability:** Astro pages passing data into client-rendered islands.
+- **Strength:** Required when applicable.
+- **Rule:** Data serialized into client islands MUST be limited to what the browser needs and MUST NOT contain secrets, privileged server-only data, or unnecessary sensitive information.
+- **Evidence:** Island props, server loaders, serialized payloads, and rendered page output.
+- **Verification:** Inspect server-to-island data paths and browser output for accidental disclosure.
+
 ## Review questions
 
 - Is client-side JavaScript limited to necessary interactions?
 - Are content, images, metadata, and links validated?
 - Is the rendering strategy appropriate for freshness and deployment constraints?
 - Are accessibility and responsive behavior tested for important pages?
+- Is the static output and hosting behavior correct from a clean build?
+- Are client islands receiving only the data they need?
 
 ## Boundaries and exceptions
 
