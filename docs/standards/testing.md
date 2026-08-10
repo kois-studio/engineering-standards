@@ -56,11 +56,11 @@
 
 ### TEST-007 — Stable external-service boundaries
 
-- **Applicability:** Unit and integration tests that interact with external services.
+- **Applicability:** Unit, integration, and end-to-end tests that interact with external services.
 - **Strength:** Recommended.
-- **Rule:** External services SHOULD be replaced with stable test doubles in unit and integration tests; end-to-end tests MAY use controlled service environments.
-- **Evidence:** Mocks, fakes, stubs, containers, service virtualization, and end-to-end environment configuration.
-- **Verification:** Confirm lower-level tests do not depend on uncontrolled network services and that end-to-end dependencies are deliberate and controlled.
+- **Rule:** Unit tests MUST use stable test doubles rather than uncontrolled external services. Integration tests SHOULD use controlled real dependencies when the integration behavior itself is in scope, and MAY use doubles when the external boundary is not the subject of the test. End-to-end tests MAY use controlled service environments.
+- **Evidence:** Mocks, fakes, stubs, containers, ephemeral databases, service virtualization, and end-to-end environment configuration.
+- **Verification:** Confirm unit tests do not depend on uncontrolled network services, integration tests verify the intended level of real interaction, and end-to-end dependencies are deliberate and controlled.
 
 ### TEST-008 — Automated quality baseline
 
