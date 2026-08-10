@@ -36,3 +36,4 @@ Standards should be enforceable where practical through repository configuration
 - [Testing](testing.md)
 - [TypeScript](typescript.md)
 - [Styling](styling.md)
+- [Security](security.md)

@@ -5,7 +5,7 @@ This directory contains the shared engineering system. Start with the section th
 ## Contents
 
 - [Principles](principles/README.md) - broad values that shape the standards.
-- [Standards](standards/README.md) - cross-project rules for documentation, testing, TypeScript, and styling.
+- [Standards](standards/README.md) - cross-project rules for documentation, testing, TypeScript, styling, and security.
 - [Technology profiles](profiles/README.md) - guidance for Astro, Angular, NestJS, and Go projects.
 - [ADR policy](adr/README.md) - when and how to record durable decisions.
 - [Templates](templates/README.md) - reusable ADR and project standards contract templates.
