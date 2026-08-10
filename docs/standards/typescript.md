@@ -70,6 +70,51 @@
 - **Evidence:** Tool configuration, dependencies, and CI scripts.
 - **Verification:** Confirm formatting and linting have one clear source of truth and are applied consistently in local development and CI.
 
+### TS-009 — Checked indexed access
+
+- **Applicability:** TypeScript projects using arrays, records, maps, or index signatures.
+- **Strength:** Required for new projects; Recommended for existing projects until adopted through tracked remediation work.
+- **Rule:** Projects SHOULD enable `noUncheckedIndexedAccess` and `noPropertyAccessFromIndexSignature` to make potentially missing indexed values explicit. New projects MUST enable both options.
+- **Evidence:** Effective `tsconfig` files, indexed access code, and migration or exception records.
+- **Verification:** Inspect the effective compiler configuration and confirm indexed reads account for missing values rather than assuming every key exists.
+
+### TS-010 — Teamwide compiler quality checks
+
+- **Applicability:** TypeScript projects with shared source code and automated type-checking.
+- **Strength:** Required for new projects; Recommended for existing projects until adopted through tracked remediation work.
+- **Rule:** New projects MUST enable `noImplicitOverride`, `noImplicitReturns`, `noUnusedLocals`, `noUnusedParameters`, and `noFallthroughCasesInSwitch`. Existing projects SHOULD enable them and MUST record deferred migration work when they cannot do so immediately.
+- **Evidence:** Effective `tsconfig` files, compiler output, and deferred-work records.
+- **Verification:** Run the type-check command and confirm the configured checks are enforced in local development or CI.
+
+### TS-011 — Exact optional-property semantics
+
+- **Applicability:** TypeScript projects where the distinction between an omitted property and an explicit `undefined` value matters.
+- **Strength:** Recommended.
+- **Rule:** Projects SHOULD consider enabling `exactOptionalPropertyTypes` when its stricter optional-property semantics improve domain or API correctness.
+- **Evidence:** API and domain contracts, effective `tsconfig`, and compatibility decisions.
+- **Verification:** Confirm optional properties have an intentional meaning and that the project’s choice is documented where the distinction affects behavior.
+
+## Compiler configuration guidance
+
+The following baseline is recommended for new TypeScript projects:
+
+```jsonc
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  }
+}
+```
+
+This is a safety baseline, not a complete universal `tsconfig`. `target`, `module`, `moduleResolution`, `lib`, `isolatedModules`, `esModuleInterop`, decorators, declaration output, source maps, and build directories MUST be selected according to the project’s runtime, framework, packaging, and build tool. Angular-specific compiler settings belong in the Angular profile; NestJS decorator settings belong in the NestJS profile when required.
+
 ## Review questions
 
 - Are strict checks enabled and passing?
