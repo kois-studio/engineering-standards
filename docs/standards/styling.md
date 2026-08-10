@@ -4,6 +4,8 @@
 
 **Classification:** Recommended default.
 
+Tailwind CSS and Lucide are optional defaults, not requirements. A project MUST NOT be considered non-compliant merely because it uses another coherent styling or icon system.
+
 ## Rules
 
 ### STYLE-001 — Primary styling system
