@@ -37,3 +37,4 @@ Standards should be enforceable where practical through repository configuration
 - [TypeScript](typescript.md)
 - [Styling](styling.md)
 - [Security](security.md)
+- [Dependencies](dependencies.md)
