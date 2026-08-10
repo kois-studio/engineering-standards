@@ -10,9 +10,9 @@
 
 - **Applicability:** Projects using AI coding agents.
 - **Strength:** Required.
-- **Rule:** Projects using AI agents MUST provide `/docs/AGENTS.md` with project-specific instructions and source-of-truth boundaries.
-- **Evidence:** A tracked `docs/AGENTS.md` file containing project-specific instructions.
-- **Verification:** Inspect the file and confirm it identifies the documentation entry point, source-of-truth boundaries, and safe change expectations.
+- **Rule:** Projects using AI agents MUST provide `/docs/AGENTS.md` as the canonical project-specific agent instruction file. It MUST identify the documentation entry point, source-of-truth boundaries, effective standards and profiles, safe change expectations, validation commands, and when documentation or ADRs must be updated.
+- **Evidence:** A tracked `docs/AGENTS.md` file containing those project-specific instructions.
+- **Verification:** Inspect the file and confirm every required topic is addressed. Root-level `AGENTS.md`, `CLAUDE.md`, or equivalent files MAY redirect to `docs/AGENTS.md`, but MUST NOT be the only location for these project instructions.
 
 ### DOC-002 — Documentation index
 
