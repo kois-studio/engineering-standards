@@ -39,3 +39,4 @@ Standards should be enforceable where practical through repository configuration
 - [Security](security.md)
 - [Dependencies](dependencies.md)
 - [CI/CD](ci-cd.md)
+- [Configuration and operations](operations.md)
