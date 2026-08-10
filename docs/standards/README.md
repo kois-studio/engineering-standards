@@ -40,3 +40,5 @@ Standards should be enforceable where practical through repository configuration
 - [Dependencies](dependencies.md)
 - [CI/CD](ci-cd.md)
 - [Configuration and operations](operations.md)
+- [API](api.md)
+- [Data and persistence](data.md)
