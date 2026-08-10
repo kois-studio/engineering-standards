@@ -94,12 +94,54 @@
 - **Evidence:** Startup validation, environment schemas, secret-management configuration, and repository history checks.
 - **Verification:** Start with invalid configuration and inspect tracked files and history for committed secrets.
 
+### NEST-012 — Persistence and cache boundaries
+
+- **Applicability:** NestJS backends using databases, Redis, queues, search systems, or other infrastructure adapters.
+- **Strength:** Required when applicable.
+- **Rule:** Persistence and cache integrations MUST be isolated behind intentional adapters or module interfaces. Application and domain logic MUST NOT depend on incidental ORM, Redis-client, or infrastructure details.
+- **Evidence:** Repository interfaces, adapters, providers, module exports, and integration tests.
+- **Verification:** Trace representative use cases and confirm infrastructure can be replaced, tested, or changed without rewriting domain rules.
+
+### NEST-013 — Explicit transaction and consistency behavior
+
+- **Applicability:** NestJS use cases that update multiple records, collections, stores, or related side effects.
+- **Strength:** Required when applicable.
+- **Rule:** Use cases MUST define transaction, ordering, partial-failure, and consistency behavior for multi-step changes. Distributed side effects MUST use an explicit coordination or recovery strategy.
+- **Evidence:** Transaction boundaries, outbox or event patterns, compensating actions, consistency documentation, and failure tests.
+- **Verification:** Exercise partial database failure, duplicate delivery, and downstream unavailability and confirm the documented outcome.
+
+### NEST-014 — Idempotent asynchronous handlers
+
+- **Applicability:** NestJS event handlers, queue consumers, scheduled jobs, and webhook processors.
+- **Strength:** Required when applicable.
+- **Rule:** Asynchronous handlers MUST define duplicate-delivery, retry, ordering, and poison-message behavior. Handlers MUST be idempotent or use explicit deduplication for operations that can be delivered more than once.
+- **Evidence:** Message keys, deduplication records, retry policies, dead-letter handling, and handler tests.
+- **Verification:** Deliver the same message repeatedly and simulate failures before and after side effects.
+
+### NEST-015 — Managed infrastructure lifecycle
+
+- **Applicability:** NestJS services using databases, Redis, queues, schedulers, or other long-lived resources.
+- **Strength:** Required when applicable.
+- **Rule:** Services MUST manage initialization, health/readiness, connection limits, and graceful shutdown for infrastructure resources.
+- **Evidence:** Lifecycle hooks, connection configuration, health indicators, shutdown handlers, and deployment probes.
+- **Verification:** Test startup dependency failure, readiness transitions, termination during active work, and resource release.
+
+### NEST-016 — Contract-aligned transport
+
+- **Applicability:** NestJS HTTP APIs and event-driven interfaces consumed outside a single application boundary.
+- **Strength:** Required when applicable.
+- **Rule:** HTTP routes and event handlers MUST remain aligned with the project’s machine-readable interface contract, including schemas, errors, compatibility, and deprecation behavior.
+- **Evidence:** OpenAPI or event schemas, DTOs, generated documentation, contract tests, and versioning policy.
+- **Verification:** Compare the published contract with implemented routes, messages, and representative success and failure responses.
+
 ## Review questions
 
 - Are module boundaries aligned with business responsibilities?
 - Are transport, application, domain, and infrastructure concerns appropriately separated?
 - Are validation, authorization, error handling, and observability consistent?
 - Are database and external-service integrations covered by meaningful tests?
+- Are transactions, cache behavior, retries, and partial failures explicit?
+- Can the service shut down without losing or duplicating work unexpectedly?
 
 ## Boundaries and exceptions
 
