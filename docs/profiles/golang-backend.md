@@ -97,8 +97,8 @@
 ### GO-012 — Graceful shutdown
 
 - **Applicability:** Long-running Go services.
-- **Strength:** Recommended.
-- **Rule:** Long-running services SHOULD implement graceful shutdown.
+- **Strength:** Required.
+- **Rule:** Long-running services MUST implement graceful shutdown.
 - **Evidence:** Signal handling, server shutdown, worker cancellation, and shutdown tests.
 - **Verification:** Send termination signals and confirm in-flight work and resources are handled within a bounded period.
 
@@ -110,12 +110,30 @@
 - **Evidence:** CI configuration, project documentation, and test output.
 - **Verification:** Run the documented command in the supported CI environment or confirm a recent successful CI execution.
 
+### GO-014 — Race detection for concurrent code
+
+- **Applicability:** Go projects using goroutines, shared state, concurrent handlers, or asynchronous workers.
+- **Strength:** Required when applicable.
+- **Rule:** Concurrent Go code MUST be exercised with the race detector or an equivalent concurrency analysis in CI or a documented recurring validation workflow.
+- **Evidence:** CI commands, race-test configuration, concurrency tests, and documented exclusions.
+- **Verification:** Run the project’s race-enabled test command and confirm representative concurrent behavior is covered.
+
+### GO-015 — Go static analysis
+
+- **Applicability:** Go projects with automated CI validation.
+- **Strength:** Required when applicable.
+- **Rule:** `go vet ./...` or the project’s documented equivalent MUST run in CI alongside tests.
+- **Evidence:** CI configuration, analysis configuration, and test output.
+- **Verification:** Run the documented analysis command and confirm findings fail the applicable quality gate.
+
 ## Review questions
 
 - Are package boundaries and dependency direction clear?
 - Does every goroutine have bounded lifetime and cancellation behavior?
 - Are timeouts, retries, and resource limits explicit at external boundaries?
 - Are concurrency, failure, and shutdown behaviors tested?
+- Is race detection part of the recurring validation workflow when concurrency is present?
+- Does CI run standard static analysis as well as tests?
 
 ## Boundaries and exceptions
 
