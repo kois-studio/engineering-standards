@@ -2,7 +2,7 @@
 
 **Scope:** software projects that adopt the shared testing standard.
 
-**Classification:** Recommended, with stronger requirements for critical behavior and production systems.
+**Classification:** Recommended overall, with Required rules for deterministic automated tests, CI execution, and an automated quality baseline when the project is applicable.
 
 ## Rules
 
@@ -61,6 +61,14 @@
 - **Rule:** External services SHOULD be replaced with stable test doubles in unit and integration tests; end-to-end tests MAY use controlled service environments.
 - **Evidence:** Mocks, fakes, stubs, containers, service virtualization, and end-to-end environment configuration.
 - **Verification:** Confirm lower-level tests do not depend on uncontrolled network services and that end-to-end dependencies are deliberate and controlled.
+
+### TEST-008 — Automated quality baseline
+
+- **Applicability:** Production software projects and non-trivial software projects. Prototypes, trivial repositories, and static content-only projects MAY be excluded when the project contract records the reason.
+- **Strength:** Required when applicable.
+- **Rule:** Applicable projects MUST have at least one meaningful automated test or validation suite covering behavior, a public contract, a build, or content integrity, and that suite MUST be runnable in CI.
+- **Evidence:** Test or validation files, project scripts, CI configuration, and the project contract when the rule is not applicable.
+- **Verification:** Identify the baseline suite, run its documented command, and confirm CI executes it or explicitly records why CI cannot run it yet.
 
 ## Review questions
 
