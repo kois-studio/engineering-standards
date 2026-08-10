@@ -38,3 +38,4 @@ Standards should be enforceable where practical through repository configuration
 - [Styling](styling.md)
 - [Security](security.md)
 - [Dependencies](dependencies.md)
+- [CI/CD](ci-cd.md)
