@@ -42,3 +42,4 @@ Standards should be enforceable where practical through repository configuration
 - [Configuration and operations](operations.md)
 - [API](api.md)
 - [Data and persistence](data.md)
+- [Web accessibility and frontend quality](web.md)
