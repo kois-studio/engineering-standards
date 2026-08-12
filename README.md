@@ -2,7 +2,7 @@
 
 Engineering Standards is a versioned, shared reference and bootstrap system for engineering practices, documentation, technology profiles, architecture decisions, and AI-agent workflows. Its primary purpose is to help a Tech Lead agent prepare a project so that future developer agents can work from the project’s own documentation without repeatedly rediscovering its architecture or consulting this repository.
 
-This repository is currently a **v0.2 working baseline**. It has an auditable rule catalog, Tech Lead workflows, project handoff templates, and cross-project standards, but it should continue to be validated against real projects.
+This repository is currently a **v0.3 working baseline**. It has an auditable rule catalog, Tech Lead workflows, project handoff templates, cross-project standards, and identity/account guidance, but it should continue to be validated against real projects.
 
 ## Why this exists
 

@@ -1,8 +1,8 @@
 # Standards Versioning
 
-**Current working version:** `0.2.0`
+**Current working version:** `0.3.0`
 
-The `0.2.0` baseline includes the auditable rule model, Tech Lead workflows, project handoff templates, cross-project security/operations standards, and the expanded technology profiles currently indexed in this repository.
+The `0.3.0` baseline includes the `0.2.0` auditable rule model, Tech Lead workflows, project handoff templates, cross-project security/operations standards, and expanded technology profiles, plus the provider-neutral Identity and Accounts Standard and the Clerk Identity Profile.
 
 Projects MUST pin the standards version and SHOULD also record the exact source revision or tag used during their bootstrap. A project may remain on an older version while it plans migration; it must not silently apply rules from a newer version.
 
