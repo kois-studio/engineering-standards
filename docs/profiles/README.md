@@ -8,5 +8,6 @@ Profiles guide technology selection and architecture for common project shapes. 
 - [Angular application](angular-application.md) — complex web applications with significant client-side state and workflows.
 - [NestJS backend](nestjs-backend.md) — modular TypeScript backends with dependency injection and HTTP or event-driven APIs.
 - [Go backend](golang-backend.md) — services where operational simplicity, performance, concurrency, or deployment characteristics are important.
+- [Clerk identity](clerk-identity.md) — recommended identity-provider profile for new account-based web applications.
 
 Each profile includes when to use it, preferred defaults, rules, review questions, and important boundaries.
