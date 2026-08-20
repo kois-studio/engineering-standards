@@ -87,6 +87,8 @@ Implement the objective, validate the repository, and summarize the files change
 
 Projects should pin a standards version and select only the profiles that apply to them. They should reference this repository rather than copying its entire contents.
 
+The absolute repository path shown in the session prompts is a local Tech Lead input: the agent needs a checkout path while performing the bootstrap or design session. It should not be copied into a project's persisted documentation. Project contracts should use the portable `standards_source.repository` URL and pin the exact `standards_source.revision` defined by [`docs/templates/project-standards.yml`](docs/templates/project-standards.yml).
+
 ## Shared standards and project context
 
 This repository is the source of truth for general principles, cross-project standards, technology profiles, documentation rules, ADR rules, reusable templates, and eventually validation or migration tooling.
