@@ -10,7 +10,8 @@ This directory contains the shared engineering system. Start with the section th
 - [ADR policy](adr/README.md) - when and how to record durable decisions.
 - [Templates](templates/README.md) - reusable ADR and project standards contract templates.
 - [Agent modes](agent-modes.md) - session routing and shared compliance states.
-- [Agent workflows](workflows/README.md) - bootstrap, design, and standards-maintenance procedures.
+- [Agent workflows](workflows/README.md) - bootstrap, design, implementation, and standards-maintenance procedures.
+- [Project work system](work/README.md) - the default tracked queue for unfinished project work.
 - [Examples](examples/project-archetypes.md) - illustrative profile selections for target project shapes.
 - [Versioning](versioning.md) - standards versions and project migration policy.
 

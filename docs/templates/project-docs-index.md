@@ -6,7 +6,7 @@ This directory is the project’s detailed documentation and AI-agent handoff sy
 
 - `AGENTS.md` — agent instructions and source-of-truth boundaries.
 - `project-standards.yml` — selected standards, profiles, compliance, exceptions, and deferred work.
-- `TODO.md` — prioritized known gaps and follow-up work.
+- `work/TODO.md` — unfinished implementation, discovery, review, and blocked work.
 
 ## Documentation map
 
@@ -15,6 +15,7 @@ This directory is the project’s detailed documentation and AI-agent handoff sy
 - APIs and data: [replace with contract paths]
 - Operations: [replace with operations paths]
 - Decisions: [replace with ADR index]
+- Work queue: [replace with `work/README.md` and `work/TODO.md`]
 
 ## Documentation maintenance
 

@@ -59,7 +59,7 @@ Create or improve the following artifacts in the target project when they are ap
 - architecture documentation — current system overview and relevant boundary or flow documents;
 - operations documentation — setup, commands, environments, deployment, and troubleshooting;
 - project ADR index and ADRs for durable project decisions; and
-- `docs/TODO.md` or an equivalent tracked remediation backlog for standards gaps.
+- `docs/work/TODO.md` or an equivalent tracked work queue for standards gaps and follow-up work.
 
 Do not create documents for areas that do not apply. Do not copy the whole standards repository. The project documentation should contain the effective rules and concise rationale needed by future agents, with a pinned reference to the canonical standards version for deeper context.
 

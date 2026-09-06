@@ -86,9 +86,18 @@
 - **Evidence:** Root README, `docs/AGENTS.md`, `docs/README.md`, and links between them.
 - **Verification:** Confirm the root README is useful without becoming the complete architecture manual, while agent instructions and detailed project facts are discoverable under `docs/`.
 
+### DOC-011 — Tracked unfinished work system
+
+- **Applicability:** AI-ready projects with implementation, review, remediation, or discovery work that can span sessions.
+- **Strength:** Required for AI-ready projects; Recommended otherwise.
+- **Rule:** AI-ready projects MUST provide a tracked unfinished-work queue, using `docs/work/TODO.md` by default or documenting an equivalent authoritative system. The queue MUST support work that is proposed, ready, active, blocked, or deferred, and each meaningful item MUST include enough context to continue safely in a later session, including an outcome, scope, acceptance or completion criteria, verification approach, and next action.
+- **Evidence:** Work-system index, queue, item format, project agent instructions, and links to any external tracker.
+- **Verification:** Start a fresh agent session from the project documentation and confirm it can identify the next safe work item, its acceptance criteria, its verification, and any blocker without relying on the previous conversation.
+
 ## Review questions
 
 - Does this document describe a current rule, a current project fact, a durable decision, or temporary work?
 - Is another document already the source of truth for this topic?
 - Are the scope and strength of each rule clear?
 - Do indexes and links still point to the right documents?
+- Can a fresh agent find and continue unfinished work without relying on the previous conversation?

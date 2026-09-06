@@ -47,7 +47,7 @@ The expected project artifacts are:
 - `docs/architecture/` — proposed system and boundary documents;
 - `docs/decisions/` — ADR index and accepted or proposed decisions;
 - `docs/questions.md` — unresolved decisions requiring user or team input; and
-- `docs/TODO.md` — implementation preparation and follow-up work.
+- `docs/work/TODO.md` — implementation preparation and follow-up work.
 
 The package MUST distinguish proposed decisions, open questions, and implementation tasks. It MUST NOT claim that code, infrastructure, tests, or integrations exist before they do.
 

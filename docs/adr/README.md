@@ -22,6 +22,10 @@ Accepted ADRs should generally be immutable. If a decision changes:
 
 Use a stable, sortable filename such as `0001-short-title.md`. Keep an index in the directory where the ADRs live and link related decisions.
 
+## ADR index
+
+- [0001 — Tracked project work queue and implementation sessions](0001-project-work-system.md)
+
 ## Suggested statuses
 
 - **Proposed** — under discussion and not yet adopted.

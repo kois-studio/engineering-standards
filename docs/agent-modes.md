@@ -1,6 +1,6 @@
 # Agent Session Modes
 
-This repository supports three different kinds of AI sessions. The mode determines the agent’s role, the repository it may change, the questions it should ask, and the artifacts it must produce.
+This repository supports four different kinds of AI sessions. The mode determines the agent’s role, the repository it may change, the questions it should ask, and the artifacts it must produce.
 
 ## Declare a mode
 
@@ -17,6 +17,7 @@ The supported values are:
 | --- | --- | --- |
 | `project-bootstrap` | Existing project Tech Lead | An existing project that needs to become AI-ready |
 | `project-design` | Greenfield project Tech Lead | A project that is not yet started or is still being defined |
+| `project-implementation` | Developer agent | An implementation session inside a prepared project |
 | `standards-maintenance` | Engineering standards maintenance | This repository and its shared standards |
 
 These aliases are convenient, but the structured `session_mode` value is canonical. A request may also use one of these explicit lines:
@@ -24,12 +25,13 @@ These aliases are convenient, but the structured `session_mode` value is canonic
 ```text
 MODE: EXISTING PROJECT TECH LEAD
 MODE: GREENFIELD PROJECT TECH LEAD
+MODE: PROJECT IMPLEMENTATION
 MODE: ENGINEERING STANDARDS MAINTENANCE
 ```
 
 If the mode is missing or ambiguous, the agent MUST ask which mode applies before making changes. The target project MUST be explicit for the two Tech Lead modes. A path outside this repository MUST be treated as a separate project and inspected under its own instructions.
 
-Copy-paste prompt templates for all three modes are maintained in the root [`README.md`](../README.md). Users should start with the matching template and replace its bracketed values.
+Copy-paste prompt templates for all four modes are maintained in the root [`README.md`](../README.md). Users should start with the matching template and replace its bracketed values.
 
 ## Shared operating rules
 
@@ -68,6 +70,15 @@ Use [`workflows/project-bootstrap.md`](workflows/project-bootstrap.md). The goal
 ### `project-design`
 
 Use [`workflows/project-design.md`](workflows/project-design.md). The goal is to turn an idea or incomplete project into an explicit, reviewable design. The agent should interview the user about critical constraints, use a documentation-driven grilling workflow when available, and label proposed architecture as design rather than implementation fact.
+
+### `project-implementation`
+
+Use [`workflows/project-implementation.md`](workflows/project-implementation.md). The target project MUST already have a usable local documentation package or the session MUST first establish the missing minimum context. The session intent MUST be explicit:
+
+- **focused** — implement the specified ticket or goal and stop after its acceptance criteria are verified;
+- **advance** — inspect the project work queue, perform a bounded product/technical/UX checkpoint, implement approved work, verify it, and record the next work items.
+
+Implementation agents MUST treat `docs/work/TODO.md` as the default source of unfinished work. New discoveries that are not addressed in the current session MUST become work items there with an appropriate state, rather than disappearing into the conversation. Agents MUST NOT silently turn high-impact product, architecture, security, data, or deployment decisions into implementation facts. They must record them as blocked questions, proposed work, or ADRs according to the project’s rules.
 
 ### `standards-maintenance`
 

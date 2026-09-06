@@ -1,5 +1,7 @@
 # Project Standards and Readiness TODOs
 
+This template is for standards-specific remediation work when a project needs a dedicated compliance backlog. General unfinished implementation, product, review, and discovery work belongs in `docs/work/TODO.md` using [`project-work.md`](project-work.md).
+
 Track deferred gaps and unresolved readiness work here. Each item should cite a rule ID or project decision where applicable.
 
 ## Format

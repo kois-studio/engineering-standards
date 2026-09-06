@@ -16,7 +16,8 @@ This file is the canonical project-specific instruction entry point for AI devel
 - API and data contracts: [replace with paths]
 - Operational procedures: [replace with paths]
 - Durable project decisions: [replace with ADR index]
-- Known gaps and deferred standards work: [replace with TODO/backlog path]
+- Known gaps and deferred standards work: [replace with standards contract and any work items]
+- Unfinished project work: [replace with `docs/work/TODO.md`]
 
 ## Working rules
 
@@ -26,6 +27,8 @@ This file is the canonical project-specific instruction entry point for AI devel
 - Update current-state documentation when implementation behavior or architecture changes.
 - Create or update an ADR for durable architectural or policy decisions.
 - Do not treat deferred standards work as completed.
+- Keep unfinished work in `docs/work/TODO.md`; record discoveries that are not addressed now instead of leaving them only in the session transcript.
+- In a focused session, do not broaden the ticket without recording a separate work item. In an advance session, use the project work queue and implementation workflow to choose the next bounded slice.
 
 ## Verification commands
 

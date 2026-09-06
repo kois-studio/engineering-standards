@@ -2,7 +2,7 @@
 
 Engineering Standards is a versioned, shared reference and bootstrap system for engineering practices, documentation, technology profiles, architecture decisions, and AI-agent workflows. Its primary purpose is to help a Tech Lead agent prepare a project so that future developer agents can work from the project’s own documentation without repeatedly rediscovering its architecture or consulting this repository.
 
-This repository is currently a **v0.3 working baseline**. It has an auditable rule catalog, Tech Lead workflows, project handoff templates, cross-project standards, and identity/account guidance, but it should continue to be validated against real projects.
+This repository is currently a **v0.4 working baseline**. It has an auditable rule catalog, Tech Lead workflows, project handoff templates, cross-project standards, identity/account guidance, and a tracked work system for focused and long-running AI implementation sessions. It should continue to be validated against real projects.
 
 ## Why this exists
 
@@ -13,11 +13,12 @@ The intended workflow has two layers of agents:
 1. **Developer agents** work inside a project repository. They use that project's local documentation and standards contract, along with the selected profiles from this repository.
 2. **Tech-lead agents** bootstrap or design projects, audit them against selected standards and profiles, and produce a self-contained project documentation package with evidence-based findings and prioritized follow-up work.
 
-This repository supports three explicit session modes:
+This repository supports four explicit session modes:
 
 1. **Project bootstrap** — analyze an existing project and prepare it for AI development.
 2. **Project design** — define and document a not-yet-started or early-stage project.
-3. **Standards maintenance** — improve this repository and its shared standards system.
+3. **Project implementation** — execute a focused ticket or bounded advancement loop inside a prepared project.
+4. **Standards maintenance** — improve this repository and its shared standards system.
 
 Sessions MUST declare their mode. See [`docs/agent-modes.md`](docs/agent-modes.md).
 
@@ -43,7 +44,7 @@ Document the project progressively and accurately. Create or improve the target 
 
 Do not invent facts. Do not perform broad behavior-changing refactors during this initial analysis unless I explicitly ask for them. You may make narrowly scoped documentation and AI-readiness changes. Ask me only about decisions that are genuinely critical; record other unknowns and continue.
 
-Before finishing, verify the documentation index, project standards contract, commands, links, and prioritized TODOs. Summarize what was documented, what remains unresolved, and the recommended next sessions.
+Before finishing, verify the documentation index, project standards contract, commands, links, and prioritized work queue. Summarize what was documented, what remains unresolved, and the recommended next sessions.
 ```
 
 ### 2. Design a project that has not started yet
@@ -67,7 +68,26 @@ Create a reviewable project design and the initial docs/ package for future impl
 Do not finalize high-impact choices while critical information is missing. Keep unresolved questions visible and actionable. Before finishing, verify that the first implementation slice, standards contract, architecture, security boundaries, and handoff instructions are clear.
 ```
 
-### 3. Improve this engineering standards repository
+### 3. Implement a focused ticket or advance a prepared project
+
+Use this when the target project already has its local documentation package and the agent should either implement one specific task or make bounded autonomous progress.
+
+```text
+MODE: PROJECT IMPLEMENTATION
+
+Engineering standards repository: [absolute path to engineering-standards]
+Target project: [absolute path to the prepared project]
+Session intent: [focused or advance]
+Ticket or goal: [specific task, or “inspect the project work queue and advance the next safe slice”]
+
+Read the target project's docs/AGENTS.md, docs/README.md, standards contract, relevant architecture and workflow documents, and docs/work/TODO.md. Inspect the current branch, working tree, recent relevant changes, and validation commands.
+
+If the intent is focused, implement only the specified ticket or goal. If the intent is advance, perform a bounded product, technical, UX, security, testing, and operations checkpoint, select the next safe work item, implement it, verify it, and record newly discovered work in docs/work/TODO.md.
+
+Do not silently expand product scope or turn high-impact architecture, security, data, deployment, or dependency decisions into facts. Record proposed work, blockers, and unresolved decisions explicitly. Update current-state documentation when behavior changes. Run applicable verification and record failures or unrun checks honestly. At the end, update the work item and create a checkpoint describing the commit, completed work, verification, risks, blockers, and next safe action.
+```
+
+### 4. Improve this engineering standards repository
 
 Use this when the work is about the shared standards system itself, not an external project.
 

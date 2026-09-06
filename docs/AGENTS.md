@@ -10,6 +10,7 @@ Supported modes are:
 
 - `project-bootstrap` — analyze and prepare an existing project for AI development.
 - `project-design` — define and document a not-yet-started or early-stage project.
+- `project-implementation` — implement approved project work in a focused or bounded advancement session.
 - `standards-maintenance` — improve this engineering standards repository itself.
 
 The user may declare a mode with either a structured block or an explicit line such as `MODE: EXISTING PROJECT TECH LEAD`. If the mode or target project is ambiguous, ask before making changes. Do not infer that every session in this repository is a standards-maintenance session.
@@ -18,6 +19,7 @@ Mode-specific workflows:
 
 - [`workflows/project-bootstrap.md`](workflows/project-bootstrap.md)
 - [`workflows/project-design.md`](workflows/project-design.md)
+- [`workflows/project-implementation.md`](workflows/project-implementation.md)
 - [`workflows/standards-maintenance.md`](workflows/standards-maintenance.md)
 
 The project workflows produce documentation that belongs in the target project. They do not copy this repository wholesale into that project.
