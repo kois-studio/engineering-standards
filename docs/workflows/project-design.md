@@ -45,7 +45,7 @@ The expected project artifacts are:
 - `docs/README.md` — documentation index;
 - `docs/project-standards.yml` — selected standards, profiles, and deliberate exceptions;
 - `docs/architecture/` — proposed system and boundary documents;
-- `docs/decisions/` — ADR index and accepted or proposed decisions;
+- `docs/decisions/` — project-local ADR index and accepted or proposed decisions. The `docs/adr/` directory in this Engineering Standards repository defines the shared ADR policy; it is not copied into projects.
 - `docs/questions.md` — unresolved decisions requiring user or team input; and
 - `docs/work/TODO.md` — implementation preparation and follow-up work.
 
