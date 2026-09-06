@@ -25,6 +25,7 @@ Use a stable, sortable filename such as `0001-short-title.md`. Keep an index in 
 ## ADR index
 
 - [0001 — Tracked project work queue and implementation sessions](0001-project-work-system.md)
+- [0002 — Kois default technology stack](0002-kois-default-technology-stack.md)
 
 ## Suggested statuses
 
