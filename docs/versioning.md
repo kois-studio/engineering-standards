@@ -1,8 +1,8 @@
 # Standards Versioning
 
-**Current working version:** `0.5.0`
+**Current working version:** `0.4.0`
 
-The `0.5.0` baseline includes the `0.4.0` auditable rule model, Tech Lead workflows, project handoff templates, cross-project security/operations standards, expanded technology profiles, the provider-neutral Identity and Accounts Standard, the Clerk Identity Profile, the project implementation/work-queue workflow, and the Kois default technology-selection policy.
+The `0.4.0` baseline includes the `0.3.0` auditable rule model, Tech Lead workflows, project handoff templates, cross-project security/operations standards, expanded technology profiles, the provider-neutral Identity and Accounts Standard, the Clerk Identity Profile, and the project implementation/work-queue workflow.
 
 Projects MUST pin the standards version and SHOULD also record the exact source revision or tag used during their bootstrap. A project may remain on an older version while it plans migration; it must not silently apply rules from a newer version.
 
@@ -23,7 +23,3 @@ When adopting a newer version, a Tech Lead MUST compare the project contract wit
 ## 0.4.0 migration notes
 
 Projects using AI developer agents SHOULD adopt `project-implementation` mode and SHOULD move unfinished work into `docs/work/TODO.md` using the project work-item format. Existing `docs/TODO.md` files MAY remain temporarily, but their contents SHOULD be migrated or linked from the new work queue so a fresh agent has one clear place to find unfinished work.
-
-## 0.5.0 migration notes
-
-Projects selecting a new technology SHOULD review the [Kois default stack profile](profiles/kois-default-stack.md). Existing projects do not need to migrate frameworks. New full-stack TypeScript projects should assess Angular + NestJS by default and document any alternative. Projects already using SvelteKit or another framework may remain on it; they should document the framework choice and apply the shared technology-neutral standards without claiming unselected framework profiles.

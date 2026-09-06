@@ -4,7 +4,6 @@ Profiles guide technology selection and architecture for common project shapes. 
 
 ## Profiles index
 
-- [Kois default stack](kois-default-stack.md) — default technology selection for Kois project shapes.
 - [Astro website](astro-website.md) — static, content-focused, and performance-oriented websites.
 - [Angular application](angular-application.md) — complex web applications with significant client-side state and workflows.
 - [NestJS backend](nestjs-backend.md) — modular TypeScript backends with dependency injection and HTTP or event-driven APIs.
