@@ -28,8 +28,8 @@ This standard is provider-neutral. Projects MAY use GitHub Actions, another host
 
 - **Applicability:** All CI pipelines.
 - **Strength:** Required.
-- **Rule:** CI MUST use the project’s pinned runtime and dependency toolchain, committed lockfiles, reproducible installation mode, and explicitly configured environment inputs.
-- **Evidence:** Runner configuration, tool-version files, lockfiles, install commands, and environment documentation.
+- **Rule:** CI MUST apply the project’s dependency controls from [DEP-001, DEP-002, and DEP-003](dependencies.md) where they are applicable, and MUST use explicitly configured environment inputs.
+- **Evidence:** Runner configuration, environment documentation, and the evidence for the referenced dependency rules.
 - **Verification:** Run the pipeline from a clean environment and confirm it does not depend on untracked local state or undeclared global tools.
 
 ### CI-004 — Required checks protect delivery
