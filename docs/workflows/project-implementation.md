@@ -42,7 +42,7 @@ For `focused` sessions, the agent SHOULD:
 1. restate the goal and acceptance criteria;
 2. inspect the relevant code and documentation;
 3. implement only the requested scope and necessary supporting changes;
-4. run the relevant verification;
+4. run the relevant verification, and use a fresh-context reviewer for security-sensitive, cross-boundary, or architectural changes;
 5. update current-state documentation and the work item;
 6. record newly discovered work in `docs/work/TODO.md`; and
 7. stop when the acceptance criteria are met, the task is blocked, or the requested scope is no longer safe to infer.
@@ -88,6 +88,18 @@ An item MUST NOT be marked complete merely because code was written. Completion 
 - no unresolved change hidden in the conversation only.
 
 The agent MUST NOT claim a deployment, integration, user validation, or security property that it did not actually verify.
+
+### Review findings
+
+The implementing agent MUST check each review finding against the code before acting on it, whether it comes from a human, an agent, or a bot, and MUST give evidence when rejecting one.
+
+- **Blocker:** the intended behavior is wrong.
+- **Should fix:** a real defect that users or callers of this change will hit.
+- **Nit:** anything else, such as style, small performance costs, or rare cases that do not affect security or data integrity.
+
+Fix blockers and should-fix findings with the smallest change that resolves them. Nits MAY be declined in one line. Record valid out-of-scope findings in `docs/work/TODO.md`.
+
+Review SHOULD stop after 3 rounds, or 5 for security, permissions, or data-loss risk. Reaching the limit, a reviewer failure, or no reply is not approval: an open blocker or should-fix finding keeps the work item incomplete.
 
 ## 7. Checkpoint and handoff
 

@@ -38,7 +38,7 @@ This standard is provider-neutral. Projects MAY use GitHub Actions, another host
 - **Strength:** Required when applicable.
 - **Rule:** A project MUST configure applicable CI failures to block merging or deployment through the platform’s available protection mechanism, unless an explicit emergency or exception process applies.
 - **Evidence:** Branch protection, merge rules, deployment gates, and exception process.
-- **Verification:** Inspect the repository settings or deployment configuration and confirm a failing required check cannot be silently treated as success.
+- **Verification:** Inspect the repository settings or deployment configuration and confirm a failing required check cannot be silently treated as success. Confirm that a check skipped by path filters, conditions, or affected-only logic cannot let a relevant change merge unvalidated.
 
 ### CI-005 — Safe workflow execution
 
@@ -48,13 +48,13 @@ This standard is provider-neutral. Projects MAY use GitHub Actions, another host
 - **Evidence:** Workflow permissions, secret scopes, event triggers, environment protections, and logs.
 - **Verification:** Review pull-request execution paths and confirm untrusted changes cannot access deployment or write credentials without an intentional approval boundary.
 
-### CI-006 — Resource and cost awareness
+### CI-006 — Resource, cost, and feedback time
 
 - **Applicability:** Hosted or metered CI environments.
 - **Strength:** Recommended.
-- **Rule:** CI SHOULD use caching, selective matrices, concurrency controls, and appropriate runner sizes to keep validation reliable and within the project’s resource budget.
-- **Evidence:** Workflow timing, cache configuration, matrix strategy, concurrency settings, and budget policy.
-- **Verification:** Inspect recurring runtime and resource usage and confirm the workflow has no unnecessary repeated work.
+- **Rule:** CI SHOULD use caching, selective execution, parallel jobs, concurrency controls, job timeouts, and appropriate runner sizes to keep validation reliable, fast enough for the project’s development loop, and within its resource budget.
+- **Evidence:** Workflow timing separated into queue, setup, and execution where available, cache configuration, matrix strategy, concurrency settings, and budget policy.
+- **Verification:** Inspect recurring runtime and resource usage, identify where the time goes, and confirm the workflow has no unnecessary repeated work.
 
 ### CI-007 — Visible validation results
 

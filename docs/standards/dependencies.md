@@ -1,6 +1,6 @@
 # Dependency and Supply Chain Standard
 
-**Scope:** projects that use third-party packages, modules, libraries, actions, images, or other externally maintained dependencies.
+**Scope:** projects that use third-party packages, modules, libraries, actions, images, agent tooling, or other externally maintained dependencies.
 
 **Classification:** Required baseline, with tool preferences marked Recommended.
 
@@ -64,6 +64,14 @@ A package manager is only one layer of supply-chain defense. Bun, pnpm, and npm 
 - **Evidence:** Package-manager configuration, lockfile, toolchain pinning, and project decision documentation.
 - **Verification:** Confirm the selected manager is used consistently in local development, CI, and deployment, and that its security controls are configured intentionally.
 
+### DEP-008 — Reviewed agent tooling
+
+- **Applicability:** Projects that commit or require third-party agent skills, hooks, MCP servers, or agent rule files.
+- **Strength:** Recommended.
+- **Rule:** Third-party agent tooling SHOULD be reviewed before adoption for what it executes, what it sends over the network, and which files or permissions it changes, and SHOULD be pinned to a known version or revision.
+- **Evidence:** Source and revision, review notes, agent configuration, and telemetry settings.
+- **Verification:** Identify each third-party item and confirm its hooks, binaries, network calls, and written files are known.
+
 ## Review questions
 
 - Is dependency resolution reproducible from a clean checkout?
@@ -71,6 +79,7 @@ A package manager is only one layer of supply-chain defense. Bun, pnpm, and npm 
 - Is the package-manager and runtime toolchain pinned?
 - Which dependency scripts can execute, and which are explicitly trusted?
 - Are dependencies purposeful, maintained, and monitored for vulnerabilities?
+- Has third-party agent tooling been reviewed and pinned before adoption?
 
 ## Boundaries and exceptions
 
